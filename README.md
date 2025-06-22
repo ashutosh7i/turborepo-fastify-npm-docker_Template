@@ -1,7 +1,6 @@
-# Turborepo npm Docker starter
+# Turborepo Fastify npm Docker starter Template
 
 This is a turborepo template which contains a project including a nodejs api server and a nextjs frontend, and it uses nodejs as package manager, use it to monorepo for nodejs + npm based projects.
-
 
 ## What's inside?
 
@@ -9,9 +8,10 @@ This Turborepo includes the following:
 
 ### Apps and Packages
 
-- `web`: a [Next.js](https://nextjs.org/) app
 - `api`: an [Express](https://expressjs.com/) server
+- `fastify-api`: a [Fastify](https://fastify.dev/) server
 - `@repo/ui`: a React component library
+- `@repo/fastify`: a shared Fastify server configuration
 - `@repo/logger`: Isomorphic logger (a small wrapper around console.log)
 - `@repo/eslint-config`: ESLint presets
 - `@repo/typescript-config`: tsconfig.json's used throughout the monorepo
@@ -48,6 +48,41 @@ To shutdown all running containers:
 # Stop running containers started by docker-compse
  docker-compose -f docker-compose.yml down
 ```
+
+### Development
+
+```
+# Install dependencies
+npm install
+
+# Build all packages (includes shared fastify package)
+npm run build
+
+# Or build specific workspace
+turbo run build --filter=@repo/fastify
+
+# Run in development (all apps)
+npm run dev
+
+# Or run specific workspace in dev
+turbo run dev --filter=fastify-api
+
+# Test the app
+npm run test
+
+# Or test specific workspace
+turbo run test --filter=fastify-api
+
+# Lint everything
+npm run lint
+
+# Format code
+npm run format
+
+# Clean all builds
+npm run clean
+```
+
 ### Utilities
 
 This Turborepo has some additional tools already setup:
