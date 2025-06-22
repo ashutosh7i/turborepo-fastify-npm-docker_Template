@@ -1,16 +1,6 @@
 version: "3"
 
 services:
-  web:
-    container_name: web
-    build:
-      context: .
-      dockerfile: ./apps/web/Dockerfile
-    restart: always
-    ports:
-      - 3000:3000
-    networks:
-      - app_network
   api:
     container_name: api
     build:
@@ -19,6 +9,17 @@ services:
     restart: always
     ports:
       - 3001:3001
+    networks:
+      - app_network
+
+  fastify-api:
+    container_name: fastify-api
+    build:
+      context: .
+      dockerfile: ./apps/fastify-api/Dockerfile
+    restart: always
+    ports:
+      - 3002:3002
     networks:
       - app_network
 
