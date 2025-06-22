@@ -1,6 +1,6 @@
 # Turborepo Fastify npm Docker starter Template
 
-This is a turborepo template which contains a project including a nodejs api server and a nextjs frontend, and it uses nodejs as package manager, use it to monorepo for nodejs + npm based projects.
+This is a turborepo template which contains a project including a nodejs api server and a fastify server, and it uses nodejs as package manager, use it to monorepo for nodejs + npm based projects.
 
 ## What's inside?
 
@@ -10,7 +10,6 @@ This Turborepo includes the following:
 
 - `api`: an [Express](https://expressjs.com/) server
 - `fastify-api`: a [Fastify](https://fastify.dev/) server
-- `@repo/ui`: a React component library
 - `@repo/fastify`: a shared Fastify server configuration
 - `@repo/logger`: Isomorphic logger (a small wrapper around console.log)
 - `@repo/eslint-config`: ESLint presets
